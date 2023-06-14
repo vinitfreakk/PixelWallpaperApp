@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         //code for horizontal recyclerview
         val numbers = mutableListOf(R.drawable.toon,R.drawable.code,R.drawable.krishna,R.drawable.love,R.drawable.maldives,R.drawable.nature,R.drawable.bike)
-        val names = mutableListOf("toon","code","krishna","love","maldives","nature","bike")
+        val names = mutableListOf("Cartoon","Code","Krishna","Love","Maldives","Nature","Bike")
         horizontalWallpaperAdapter = HorizontalWallpaperAdapter(this,numbers,names)
         recyclerView1.adapter = horizontalWallpaperAdapter
         recyclerView1.layoutManager = LinearLayoutManager(this@MainActivity,LinearLayoutManager.HORIZONTAL,false)
