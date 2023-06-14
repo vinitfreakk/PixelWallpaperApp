@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         search.setOnClickListener {
            val txtxSearch = searchTxt.text.toString()
             wallpaperViewsModel.fetchWallpapers(txtxSearch)
+
         }
            val apiInterface =ApiUtilites.getRetrofitInstance().create(ApiInterface::class.java)
            val wallpaperRepository = WallpaperRepository(apiInterface)

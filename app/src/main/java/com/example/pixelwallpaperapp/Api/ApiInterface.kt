@@ -10,7 +10,7 @@ import retrofit2.http.Query
 interface ApiInterface {
     @GET("search")
     suspend fun getWallapers(
-        @Header("Authorization") apiKey: String = "", /*The @Header("Authorization") annotation is used to specify
+        @Header("Authorization") apiKey: String = "dmcjCZCR13uRJ2D9r1GQgJqWiwfQRn2LwOUjfjF4K7qH0NNC7r7geyi4", /*The @Header("Authorization") annotation is used to specify
                                                                                                                 that the apiKey parameter should be included as a header
                                                                                                                 with the key "Authorization" in the API request.*/
         @Query("query") query: String,
