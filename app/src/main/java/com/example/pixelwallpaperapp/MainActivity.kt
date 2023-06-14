@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pixelwallpaperapp.Adapters.HorizontalWallpaperAdapter
 import com.example.pixelwallpaperapp.Adapters.WallpaperAdapter
 import com.example.pixelwallpaperapp.Api.ApiInterface
 import com.example.pixelwallpaperapp.Api.ApiUtilites
@@ -21,12 +22,21 @@ import com.example.pixelwallpaperapp.ViewModels.WallpaperViewsModel
 class MainActivity : AppCompatActivity() {
     lateinit var wallpaperViewsModel: WallpaperViewsModel
     lateinit var wallpaperAdapter: WallpaperAdapter
+    lateinit var horizontalWallpaperAdapter: HorizontalWallpaperAdapter
    lateinit var  recyclerView:RecyclerView
+   lateinit var recyclerView1:RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView2)
+        recyclerView1 = findViewById<RecyclerView>(R.id.recyclerViewHOR)
+        val numbers = mutableListOf(R.drawable.vinit,R.drawable.vinit,R.drawable.vinit,R.drawable.vinit,R.drawable.vinit,R.drawable.vinit)
+        val names = mutableListOf("Vinit","Vinit","Vinit","Vinit","Vinit","Vinit")
+        horizontalWallpaperAdapter = HorizontalWallpaperAdapter(this,numbers,names)
+        recyclerView1.adapter = horizontalWallpaperAdapter
+        recyclerView1.layoutManager = LinearLayoutManager(this@MainActivity,LinearLayoutManager.HORIZONTAL,false)
+
 
         val search = findViewById<ImageButton>(R.id.imageButton)
         val searchTxt = findViewById<TextView>(R.id.editTextText)
