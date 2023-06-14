@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
               val response = it.photos
                val list = response as ArrayList<Photo>
                if(list!= emptyList<Photo>()){
+                   list.shuffle()
                    wallpaperAdapter = WallpaperAdapter(list,this)
                    recyclerView.adapter = wallpaperAdapter
                    recyclerView.layoutManager = GridLayoutManager(this@MainActivity,2)

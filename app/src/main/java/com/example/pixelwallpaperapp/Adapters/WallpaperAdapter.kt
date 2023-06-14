@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.pixelwallpaperapp.Models.Photo
 import com.example.pixelwallpaperapp.R
-import com.example.pixelwallpaperapp.WallpaperActivity
+import com.example.pixelwallpaperapp.SetwallpaperActivity
 
 class WallpaperAdapter(val list:ArrayList<Photo>,val context: Context):RecyclerView.Adapter<WallpaperAdapter.WallpaperHolder>() {
 
@@ -28,7 +28,7 @@ class WallpaperAdapter(val list:ArrayList<Photo>,val context: Context):RecyclerV
     override fun onBindViewHolder(holder: WallpaperHolder, position: Int) {
          Glide.with(holder.itemView).load(list[position].src.portrait).into(holder.imageview)
         holder.itemView.setOnClickListener {
-            val intent : Intent = Intent(context,WallpaperActivity::class.java)
+            val intent : Intent = Intent(context,SetwallpaperActivity::class.java)
             intent.putExtra("image",list[position].src.portrait)
             context.startActivity(intent)
         }
