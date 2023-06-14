@@ -23,13 +23,3 @@ class WallpaperViewsModel(private val wallpaperRepository: WallpaperRepository,v
     }
 }
 
-/* init {
-                 viewModelScope.launch(Dispatchers.IO) {
-
-                     wallpaperRepository.getwallpapersfromWallpaperRepository(value)
-                 }
-        }
-
-    val wallpaper:LiveData<Wallpapers>
-        get() = wallpaperRepository.liveData
-}*/

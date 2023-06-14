@@ -1,8 +1,9 @@
 package com.example.pixelwallpaperapp
 
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -31,15 +32,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView2)
         recyclerView1 = findViewById<RecyclerView>(R.id.recyclerViewHOR)
-        val numbers = mutableListOf(R.drawable.vinit,R.drawable.vinit,R.drawable.vinit,R.drawable.vinit,R.drawable.vinit,R.drawable.vinit)
-        val names = mutableListOf("Vinit","Vinit","Vinit","Vinit","Vinit","Vinit")
+        val search = findViewById<Button>(R.id.imageButton)
+        val searchTxt = findViewById<TextView>(R.id.editTextText)
+
+        //code for horizontal recyclerview
+        val numbers = mutableListOf(R.drawable.toon,R.drawable.code,R.drawable.krishna,R.drawable.love,R.drawable.maldives,R.drawable.nature,R.drawable.bike)
+        val names = mutableListOf("toon","code","krishna","love","maldives","nature","bike")
         horizontalWallpaperAdapter = HorizontalWallpaperAdapter(this,numbers,names)
         recyclerView1.adapter = horizontalWallpaperAdapter
         recyclerView1.layoutManager = LinearLayoutManager(this@MainActivity,LinearLayoutManager.HORIZONTAL,false)
 
 
-        val search = findViewById<ImageButton>(R.id.imageButton)
-        val searchTxt = findViewById<TextView>(R.id.editTextText)
+
+        //code for fetching wallpaper from api and displaying it in recyclerview
         search.setOnClickListener {
            val txtxSearch = searchTxt.text.toString()
             wallpaperViewsModel.fetchWallpapers(txtxSearch)
